@@ -1,0 +1,24 @@
+{
+  "presets": [
+    "es2015-node6",
+    "stage-3"
+  ],
+  "plugins": [
+    ["transform-decorators-legacy"],
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    [
+      "istanbul",
+      {
+        "exclude": [
+          "test/*.js"
+        ]
+      }
+    ]
+  ]
+}
