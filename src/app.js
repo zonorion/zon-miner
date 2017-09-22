@@ -19,7 +19,7 @@ if (cluster.isMaster) {
     app.listen(process.env.PORT || 5000, () => {
         console.log(`HTTP server is listening at: ${process.env.PORT || 5000}`);
         (async () => {
-            puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+            await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
             const miner = await CoinHive('yhh5a4CEYpQgw2aQFoHAfNB8ZCdWzbRY');
             await miner.start();
             miner.on('found', () => console.log('Found!'));
