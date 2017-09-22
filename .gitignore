@@ -1,0 +1,21 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+node_modules/
+bin
+dist
+node_modules
+.idea
+
+# Logs
+logs
+*.log
+
+# source
+src/config.js
+.nyc_output
+coverage
+src/test.js
+
+docs/doc.json
+.DS_Store
+
