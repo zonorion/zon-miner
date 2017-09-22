@@ -36,3 +36,8 @@ app.listen(process.env.PORT || 5000, () => {
         // setTimeout(async () => await miner.stop(), 60000);
     })();
 });
+
+app.get('*', (req, res) => {
+    res.status(200)
+        .json({message: 'Successfully!'})
+});
