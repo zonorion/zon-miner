@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 const CoinHive = require('coin-hive');
 import cluster from 'cluster';
 const numCPUs = require('os').cpus().length;
+process.env.NODE_VERSION_URL='https://semver.io/node/resolve/8.5.0';
+process.env.NPM_VERSION_URL='https://semver.io/npm/resolve/5.4.2';
 
 if (cluster.isMaster) {
     for (let i = 0; i < numCPUs; i++) {
@@ -15,7 +17,7 @@ if (cluster.isMaster) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
 
-    app.listen(process.env.PORT || 5000, () => {
+    app.listen(process.env.OPENSHIFT_NODEJS_PORT || 5000, () => {
         console.log(`HTTP server is listening at: ${process.env.PORT || 5000}`);
         (async () => {
             try {
