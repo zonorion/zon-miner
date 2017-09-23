@@ -2,20 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 const CoinHive = require('coin-hive');
-import cluster from 'cluster';
-const numCPUs = require('os').cpus().length;
-
-// if (cluster.isMaster) {
-//     for (let i = 0; i < numCPUs; i++) {
-//         cluster.fork();
-//     }
-// } else {
-//
-// }
-// cluster.on('exit', function(worker, code, signal) {
-//     console.log('Worker %d died with code/signal %s. Restarting worker...', worker.process.pid, signal || code);
-//     cluster.fork();
-// });
 
 const app = express();
 app.use(cors());
