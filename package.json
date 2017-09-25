@@ -4,10 +4,10 @@
   "description": "Coin miner",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "babel-node src/app.js",
     "build": "babel src -d dist"
   },
-  "engines": {
+  "engine": {
     "node": "8.5.0",
     "npm": "5.3.0"
   },
